@@ -22,27 +22,27 @@ public class OrderController {
         return ResponseEntity.ok(orderDto);
     }
 
-    @GetMapping("/get-order")
+    @GetMapping("/get-order-detail")
     public ResponseEntity<List<ProductCart>> getOrder(@RequestParam String username){
         List<ProductCart> productCarts=orderService.getOrder(username);
         return ResponseEntity.ok(productCarts);
     }
 
-    @GetMapping("/get-order1")
+    @GetMapping("/get-order")
     public ResponseEntity<OrderDto> getOrder1(@RequestParam String username){
         OrderDto orderDto=orderService.getOrder1(username);
         return ResponseEntity.ok(orderDto);
     }
 
-    @GetMapping("/get-all-order")
-    public ResponseEntity<List<OrderDto>> getAllOrder(@RequestParam String username){
-        List<OrderDto> orderDtos=orderService.getAllOrder(username);
-        return ResponseEntity.ok(orderDtos);
-    }
-
-    @GetMapping("/get-order-detail")
-    public ResponseEntity<List<OrderDto>> getAllOrder(@RequestParam String username,@RequestParam Long id){
-        List<OrderDto> orderDtos=orderService.getAllOrder(username);
-        return ResponseEntity.ok(orderDtos);
-    }
+//    @GetMapping("/get-all-order")
+//    public ResponseEntity<List<OrderDto>> getAllOrder(@RequestParam String username){
+//        List<OrderDto> orderDtos=orderService.getAllOrder(username);
+//        return ResponseEntity.ok(orderDtos);
+//    }
+//
+//    @GetMapping("/get-order-detail")
+//    public ResponseEntity<List<OrderDto>> getAllOrder(@RequestParam String username,@RequestParam Long id){
+//        List<OrderDto> orderDtos=orderService.getAllOrder(username);
+//        return ResponseEntity.ok(orderDtos);
+//    }
 }
